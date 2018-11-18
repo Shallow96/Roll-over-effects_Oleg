@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'PhilosopherBoldItalic';
+    src: url('../fonts/PhilosopherBoldItalic.eot');
+    src: url('../fonts/PhilosopherBoldItalic.eot') format('embedded-opentype'),
+         url('../fonts/PhilosopherBoldItalic.woff2') format('woff2'),
+         url('../fonts/PhilosopherBoldItalic.woff') format('woff'),
+         url('../fonts/PhilosopherBoldItalic.ttf') format('truetype'),
+         url('../fonts/PhilosopherBoldItalic.svg#PhilosopherBoldItalic') format('svg');
+}
