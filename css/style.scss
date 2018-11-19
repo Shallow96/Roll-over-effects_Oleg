@@ -141,7 +141,7 @@ header .container{
       display: inline-block;
       margin-top: 54px;
       padding: 6px 20px;
-      //border-top: solid 1px #958671;
+      border-top: solid 1px transparent;
       &:hover {
         border-top: solid 1px #958671;
       }
@@ -214,6 +214,7 @@ header .container{
       font: 11px/15px 'Arial';
       border: none;
       box-sizing: border-box;
+      outline:none;
       }
       button{
         font: 11px/18px 'Arial';
@@ -255,36 +256,37 @@ header .container{
       }
     }
   }
+
   .owl-dot{
-    position: relative;
+    position: absolute;
     background-color: #e58415;
     height: 8px;
     width: 210px;
     &:first-child{
-      bottom: 0;
       &:hover{
         content: url("../images/watch.png");
+        width: 210px;
       }
     }
     &:nth-child(2){
       left: 250px;
-      bottom: 8px;
       &:hover{
         content: url("../images/watch2.png");
+        width: 210px;
       }
     }
     &:nth-child(3){
       left: 500px;
-      bottom: 16px;
       &:hover{
         content: url("../images/watch3.png");
+        width: 210px;
       }
     }
     &:nth-child(4){
       left: 750px;
-      bottom: 24px;
       &:hover{
         content: url("../images/watch4.png");
+        width: 210px;
       }
      }
     &:hover{
@@ -292,12 +294,15 @@ header .container{
       width: inherit;
       background-size: cover;
       position: absolute;
-      bottom: 0;
+      bottom: -8px;
       background: transparent;
-      padding-bottom: 80px;
+      border-bottom: solid 8px #e58415;
+      padding-bottom: 25px;
     }
    }
 }
+
+
 
 
 

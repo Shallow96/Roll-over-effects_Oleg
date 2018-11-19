@@ -110,7 +110,8 @@ header .container {
     .right_head .main_head li {
       display: inline-block;
       margin-top: 54px;
-      padding: 6px 20px; }
+      padding: 6px 20px;
+      border-top: solid 1px transparent; }
       .right_head .main_head li:hover {
         border-top: solid 1px #958671; }
       .right_head .main_head li:last-child {
@@ -160,7 +161,8 @@ header .container {
       margin-left: 5px;
       font: 11px/15px 'Arial';
       border: none;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      outline: none; }
     .right_head form button {
       font: 11px/18px 'Arial';
       font-style: italic;
@@ -191,36 +193,36 @@ header .container {
     .owl-carousel .owl-nav .owl-next:after {
       content: url("../images/ar_right.png"); }
   .owl-carousel .owl-dot {
-    position: relative;
+    position: absolute;
     background-color: #e58415;
     height: 8px;
     width: 210px; }
-    .owl-carousel .owl-dot:first-child {
-      bottom: 0; }
-      .owl-carousel .owl-dot:first-child:hover {
-        content: url("../images/watch.png"); }
+    .owl-carousel .owl-dot:first-child:hover {
+      content: url("../images/watch.png");
+      width: 210px; }
     .owl-carousel .owl-dot:nth-child(2) {
-      left: 250px;
-      bottom: 8px; }
+      left: 250px; }
       .owl-carousel .owl-dot:nth-child(2):hover {
-        content: url("../images/watch2.png"); }
+        content: url("../images/watch2.png");
+        width: 210px; }
     .owl-carousel .owl-dot:nth-child(3) {
-      left: 500px;
-      bottom: 16px; }
+      left: 500px; }
       .owl-carousel .owl-dot:nth-child(3):hover {
-        content: url("../images/watch3.png"); }
+        content: url("../images/watch3.png");
+        width: 210px; }
     .owl-carousel .owl-dot:nth-child(4) {
-      left: 750px;
-      bottom: 24px; }
+      left: 750px; }
       .owl-carousel .owl-dot:nth-child(4):hover {
-        content: url("../images/watch4.png"); }
+        content: url("../images/watch4.png");
+        width: 210px; }
     .owl-carousel .owl-dot:hover {
       height: inherit;
       width: inherit;
       background-size: cover;
       position: absolute;
-      bottom: 0;
+      bottom: -8px;
       background: transparent;
-      padding-bottom: 80px; }
+      border-bottom: solid 8px #e58415;
+      padding-bottom: 25px; }
 
 /*# sourceMappingURL=style.css.map */
