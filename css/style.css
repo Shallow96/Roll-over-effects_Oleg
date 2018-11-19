@@ -172,4 +172,55 @@ header .container {
       margin: 0;
       padding-top: 2px; }
 
+.owl-carousel {
+  position: relative;
+  max-width: 960px;
+  width: 100%; }
+  .owl-carousel img {
+    margin-bottom: 30px; }
+  .owl-carousel .owl-nav .owl-prev {
+    position: absolute;
+    top: 33%;
+    left: 10px; }
+    .owl-carousel .owl-nav .owl-prev:before {
+      content: url("../images/ar_left.png"); }
+  .owl-carousel .owl-nav .owl-next {
+    position: absolute;
+    top: 33%;
+    right: 10px; }
+    .owl-carousel .owl-nav .owl-next:after {
+      content: url("../images/ar_right.png"); }
+  .owl-carousel .owl-dot {
+    position: relative;
+    background-color: #e58415;
+    height: 8px;
+    width: 210px; }
+    .owl-carousel .owl-dot:first-child {
+      bottom: 0; }
+      .owl-carousel .owl-dot:first-child:hover {
+        content: url("../images/watch.png"); }
+    .owl-carousel .owl-dot:nth-child(2) {
+      left: 250px;
+      bottom: 8px; }
+      .owl-carousel .owl-dot:nth-child(2):hover {
+        content: url("../images/watch2.png"); }
+    .owl-carousel .owl-dot:nth-child(3) {
+      left: 500px;
+      bottom: 16px; }
+      .owl-carousel .owl-dot:nth-child(3):hover {
+        content: url("../images/watch3.png"); }
+    .owl-carousel .owl-dot:nth-child(4) {
+      left: 750px;
+      bottom: 24px; }
+      .owl-carousel .owl-dot:nth-child(4):hover {
+        content: url("../images/watch4.png"); }
+    .owl-carousel .owl-dot:hover {
+      height: inherit;
+      width: inherit;
+      background-size: cover;
+      position: absolute;
+      bottom: 0;
+      background: transparent;
+      padding-bottom: 80px; }
+
 /*# sourceMappingURL=style.css.map */
