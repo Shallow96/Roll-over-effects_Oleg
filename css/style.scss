@@ -8,10 +8,26 @@
   url('../fonts/PhilosopherBoldItalic.svg#PhilosopherBoldItalic') format('svg');
 }
 
+@mixin max-screen($res){
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  @include max-screen(1024px){
+    padding: 10px;
+    margin: 0;
+  }
+}
+
 *{
   margin: 0;
   padding: 0;
 }
+
 .container{
   max-width: 960px;
   margin: 0 auto;
@@ -25,15 +41,25 @@ header nav{
   position: relative;
   z-index: 5;
   left: 0;
+  @include max-screen(1024px){
+    display: none;
+  }
   }
 
 header {
   position: relative;
   .logo{
-  float: left;
-  margin-top: 44px;
-  position: relative;
-  outline:none;
+    float: left;
+    margin-top: 44px;
+    position: relative;
+    outline:none;
+    @include max-screen(1024px){
+      margin-top: 20px;
+    }
+    @include max-screen(768px){
+      float: none;
+      left: 40%;
+    }
     &:after{
       content: "";
       display: block;
@@ -46,6 +72,11 @@ header {
     top: -87px;
     z-index: 8;
     background-color: white;
+    @include max-screen(1024px){
+      position: relative;
+      top: 0;
+      margin-bottom: 30px;
+    }
     &:after {
       content: "";
       border-bottom: solid 1px #958671;
@@ -53,6 +84,9 @@ header {
       top: -22px;
       display: block;
       clear: both;
+      @include max-screen(768px){
+        display: none;
+      }
     }
   }
 }
@@ -60,6 +94,10 @@ header {
 
 .right_head {
   float: right;
+  @include max-screen(768px){
+    margin-top: 10px;
+    float: none;
+  }
   &:after {
     content: "";
     display: block;
@@ -67,6 +105,12 @@ header {
   }
   .top_head {
     margin-top: 13px;
+    @include max-screen(768px){
+      width: 80%;
+      float: none;
+      margin: auto;
+      text-align: center;
+    }
     &:after {
       content: "";
       display: block;
@@ -75,11 +119,18 @@ header {
     ul {
       float: right;
       list-style: none;
+      @include max-screen(768px){
+        float: none;
+        margin: auto;
+      }
     }
     li {
       display: inline-block;
       &:first-child a {
         margin-right: 34px;
+        @include max-screen(768px){
+          margin-right: 15px;
+        }
       }
       &:nth-child(2):after {
         content: '';
@@ -95,21 +146,33 @@ header {
         margin-left: 6px;
         margin-bottom: 1px;
         margin-right: 30px;
+        @include max-screen(768px){
+          margin-right: 15px;
+        }
       }
       &:nth-child(3) {
         margin-right: 34px;
+        @include max-screen(768px){
+          margin-right: 15px;
+        }
       }
       &:nth-child(4) {
         margin-right: 26px;
+        @include max-screen(768px){
+          margin-right: 15px;
+        }
       }
       &:nth-child(5) {
-        margin-right: 6px
+        margin-right: 6px;
       }
     }
     a {
       text-decoration: none;
       color: #e58415;
       font: 11px/14px 'Arial';
+      @include max-screen(768px){
+        font-size: 16px;
+      }
       i {
         color: white;
         background-color: #eca350;
@@ -126,6 +189,14 @@ header {
   .main_head {
     font: 15px/14px 'PhilosopherBoldItalic';
     text-decoration: none;
+    @include max-screen(768px){
+      font-size: 18px;
+      width: 90%;
+      text-align: center;
+      margin-bottom: 15px;
+      border-bottom: solid 2px;
+      margin: auto;
+    }
     &:after {
       content: "";
       display: block;
@@ -138,6 +209,10 @@ header {
       padding: 6px 20px;
       border-top: solid 1px transparent;
       transition: 0.7s;
+      @include max-screen(768px){
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
       &:hover {
         border-top: solid 1px #958671;
         transition: 0.7s;
@@ -182,7 +257,7 @@ header {
     left: -150px;
     visibility: hidden;
     opacity: 0;
-    transition: 1s;
+    transition: 0.1s;
     border:1px solid #777777;
     width: 280px;
     background: #958671;
@@ -193,6 +268,9 @@ header {
     opacity: 1;
     left: 0;
     top: 28px;
+    @include max-screen(768px){
+      transition: 0.3s;
+    }
     //transform: rotate(360deg);
   }
   .drop:nth-child(4):hover .drop_down{
@@ -205,7 +283,11 @@ header {
   form{
     float: right;
     border: solid 1px#958671;
-
+    @include max-screen(768px){
+    position: absolute;
+    top: 10px;
+    right: 0;
+  }
     input{
       width: 245px;
       margin-left: 5px;
@@ -213,6 +295,11 @@ header {
       border: none;
       box-sizing: border-box;
       outline:none;
+      @include max-screen(768px){
+        width: 170px;
+        font-size: 16px;
+      }
+
       }
       button{
         font: 11px/18px 'Arial';
@@ -224,6 +311,9 @@ header {
         box-sizing: border-box;
         margin:0;
         padding-top: 2px;
+        @include max-screen(768px){
+          font-size: 14px;
+        }
       }
     }
   }
@@ -253,6 +343,7 @@ header {
       right: 10px;
       &:after {
         content: url("../images/ar_right.png");
+        size: 20px;
       }
     }
   }
@@ -266,6 +357,11 @@ header {
       &:hover{
         background-image: url("../images/watch.png");
         border-bottom-color: #ff8025;
+        @include max-screen(768px){
+          background-image: none;
+          padding: 0;
+          height: 0;
+        }
       }
     }
     &:nth-child(2){
@@ -273,6 +369,11 @@ header {
       &:hover{
         background-image: url("../images/watch2.png");
         border-bottom-color: #3aab4f;
+        @include max-screen(768px){
+          background-image: none;
+          padding: 0;
+          height: 0;
+        }
       }
     }
     &:nth-child(3){
@@ -280,6 +381,11 @@ header {
       &:hover{
         background-image: url("../images/watch3.png");
         border-bottom-color: #656fd7;
+        @include max-screen(768px){
+          background-image: none;
+          padding: 0;
+          height: 0;
+        }
       }
     }
     &:nth-child(4){
@@ -287,6 +393,11 @@ header {
       &:hover{
         background-image: url("../images/watch4.png");
         border-bottom-color: #ea5432;
+        @include max-screen(768px){
+          background-image: none;
+          padding: 0;
+          height: 0;
+        }
       }
      }
     &:hover{
@@ -317,11 +428,18 @@ header {
     display: inline-block;
     font: 16px/15px 'PhilosopherBoldItalic';
     color: #958671;
+    @include max-screen(768px){
+      margin-left: 40px;
+      font-size: 20px;
+    }
     p {
       margin-left: 13px;
       display: inline-block;
       font-size: 10px;
       text-transform: uppercase;
+      @include max-screen(768px){
+        font-size: 15px;
+      }
       a{
         text-decoration: none;
         color: inherit;
@@ -333,7 +451,12 @@ header {
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
-
+    @include max-screen(1024px){
+      justify-content: space-around;
+    }
+    @include max-screen(768px){
+      justify-content: space-around;
+    }
     .image_content {
       position: relative;
       width: 223px;
@@ -342,9 +465,18 @@ header {
       &:nth-child(2){
         max-width: 230px;
         width: 100%;
+        @include max-screen(768px){
+          order: 2;
+          max-width: 550px;
+        }
         img{
           width: 230px;
           height: 188px;
+        }
+      }
+      &:nth-child(2) .layer_visible{
+        @include max-screen(768px){
+          display: none;
         }
       }
       .layer_invisible{
@@ -355,19 +487,34 @@ header {
           font: 14px/15px 'PhilosopherBoldItalic';
           color: #e89332;
           margin: 7px 0 15px;
+          @include max-screen(768px){
+            font-size: 20px;
+            line-height: 20px;
+            margin: 10px;
+          }
         }
         p{
           font: 11px/15px 'Arial';
           font-style: italic;
           color: #958671;
+          @include max-screen(768px){
+            font-size: 15px;
+          }
           }
         nav{
           height: 77px;
           overflow: hidden;
           margin-bottom: 12px;
+          @include max-screen(768px){
+            margin:0;
+          }
           p{
             font: 12px/16px 'Arial';
             color: #9d9d9d;
+            @include max-screen(768px){
+              font-size: 15px;
+              text-align: justify;
+            }
           }
         }
         a{
@@ -375,10 +522,9 @@ header {
           text-transform: uppercase;
           font: 10px/15px 'PhilosopherBoldItalic';
           color: #958671;
-        }
-        &:hover{
-          //display: block;
-          visibility: visible;
+          @include max-screen(768px){
+            font-size: 12px;
+          }
         }
       }
       &:hover .layer_visible{
@@ -401,28 +547,61 @@ header {
 
 footer{
   .container {
+
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include max-screen(768px){
+      display: block;
+      position: relative;
+    }
     .left_foot {
       height: 100%;
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
       margin-top: 80px;
+      @include max-screen(768px){
+        display: block;
+        margin-top: 15px;
+      }
       .logo{
         margin-top: 3px;
+        @include max-screen(768px){
+          position: absolute;
+          bottom: 0;
+          right: 50px;
+          img{
+            width: 140%;
+          }
+        }
       }
       p{
         font: 10px/14px 'Arial';
         color: #cbbead;
+        @include max-screen(768px){
+          position: absolute;
+          left: 25%;
+          bottom: 15px;
+          font-size: 12px;
+        }
       }
       nav{
         margin-left: 15px;
         ul{
           display: flex;
           list-style: none;
+          @include max-screen(768px){
+            display: block;
+            position: relative;
+            left: 0;
+            top: 0;
+            margin-bottom: 30px;
+          }
           li{
+            @include max-screen(768px){
+              margin-bottom: 5px;
+            }
             &:last-child a{
               border: none;
             }
@@ -435,6 +614,11 @@ footer{
               text-decoration: none;
               border-right: solid 1px;
               padding: 0 7px;
+              @include max-screen(768px){
+                border: none;
+                padding: 0;
+                font-size: 15px;
+              }
 
             }
           }
@@ -445,6 +629,13 @@ footer{
     .right_foot {
       height: 100%;
       margin: 80px 0 17px;
+      @include max-screen(768px){
+        margin: 0;
+        position: absolute;
+        right: 30px;
+        top: 0;
+        text-align: left;
+      }
       p{
         font: 10px/14px 'Arial';
         color: #cbbead;
@@ -452,6 +643,9 @@ footer{
       ul{
         display: flex;
         list-style: none;
+        @include max-screen(768px){
+          display: block;
+        }
         li{
           &:first-child i{
             margin-left: 0;
@@ -460,6 +654,9 @@ footer{
             font: 11px/14px 'Arial';
             color: #e58415;
             text-decoration: none;
+            @include max-screen(768px){
+              font-size: 13px;
+            }
 
             i{
               font-size: 10px;
@@ -471,6 +668,10 @@ footer{
               background-color: #e58415;
               color: white;
               margin: 0 6px 0 25px;
+              @include max-screen(768px){
+                margin: 5px 6px 0 0;
+              }
+
             }
           }
         }
